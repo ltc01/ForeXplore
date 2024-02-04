@@ -51,7 +51,7 @@ const NavBar = () => {
             >
                 {/* Company Logo */}
                 <div className="flex lg:flex-1">
-                    <h1 className="-m-1.5 p-1.5 text-2xl text-slate-700 font-bold">
+                    <h1 className="-m-1.5 p-1.5 text-2xl text-slate-800 font-bold">
                         ForeXplore.
                     </h1>
                 </div>
@@ -67,14 +67,14 @@ const NavBar = () => {
                 </div>
 
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-slate-700 ">
+                    <a href="#" className="text-sm font-semibold leading-6 text-slate-800 ">
                         Home
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-slate-700 ">
+                    <a href="#" className="text-sm font-semibold leading-6 text-slate-800 ">
                         About
                     </a>
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-700 font-semibold leading-6">
+                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-800 font-semibold leading-6">
                             Features
                             <ChevronDownIcon
                                 className="h-5 w-5 flex-none"
@@ -113,10 +113,10 @@ const NavBar = () => {
                         </Transition>
                     </Popover>
 
-                    <a href="#" className="text-sm text-slate-700 font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
                         Products
                     </a>
-                    <a href="#" className="text-sm text-slate-700 font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
                         Contact Us
                     </a>
                 </Popover.Group>
