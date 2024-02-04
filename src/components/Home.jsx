@@ -4,7 +4,7 @@ import img from '../assets/5019931.jpg';
 const Home = () => {
     return (
         <main>
-            <section id="welcome">
+            <section id="home">
                 <div className='w-full lg:px-20 gap-10 pt-40 flex flex-col items-center lg:flex-row'>
                     <div className='flex px-10 flex-col justify-center items-center lg:items-start lg:w-[60%]'>
                         <h1 className='text-4xl text-slate-800 font-bold mb-5' >Welcome to ForeXplore</h1>

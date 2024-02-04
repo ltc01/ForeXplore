@@ -2,13 +2,13 @@ import React from 'react'
 
 const About = () => {
     return (
-        <section id="about" className='bg-yellow-50 py-20'>
+        <section id="about" className='bg-yellow-100 py-20'>
             <div className='my-10 mx-auto px-10 md:px-0 md:w-1/2 text-center'>
-                <h2 className="text-3xl font-bold text-slate-800 mb-8">
+                <h2 className="text-3xl font-semibold text-slate-800 mb-8">
                     About 
                 </h2>
                 <p className="text-slate-600 mb-16">Welcome to ForeXplore, your go-to destination for all things related to currency exchange. At ForeXplore, we are dedicated to providing you with accurate, reliable, and up-to-date information to empower your currency exchange decisions.</p>
-                <h2 className="text-2xl font-bold text-slate-800 mb-8">
+                <h2 className="text-3xl font-semibold text-slate-800 mb-8">
                     Our Mission
                 </h2>
                 <p className="text-slate-600 mb-16">

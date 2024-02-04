@@ -5,6 +5,7 @@ import About from '../components/About';
 import Features from '../components/Features';
 import Products from '../components/Products';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 
 const Root = () => {
@@ -16,6 +17,7 @@ const Root = () => {
             <Features />
             <Products />
             <Contact />
+            <Footer />
         </>
     )
 }

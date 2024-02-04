@@ -67,10 +67,10 @@ const NavBar = () => {
                 </div>
 
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-slate-800 ">
+                    <a href="#home" className="text-sm font-semibold leading-6 text-slate-800 ">
                         Home
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-slate-800 ">
+                    <a href="#about" className="text-sm font-semibold leading-6 text-slate-800 ">
                         About
                     </a>
                     <Popover className="relative">
@@ -113,10 +113,10 @@ const NavBar = () => {
                         </Transition>
                     </Popover>
 
-                    <a href="#" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
+                    <a href="#products" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
                         Products
                     </a>
-                    <a href="#" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
+                    <a href="#contactus" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
                         Contact Us
                     </a>
                 </Popover.Group>

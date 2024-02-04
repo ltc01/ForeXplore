@@ -8,7 +8,7 @@ const Products = () => {
                 <img src={products} alt="" className='w-full object-cover h-[36rem] overflow-hidden' />
                 <div className='bg-zinc-900/50 w-full absolute  top-0 bottom-0'>
                     <div className='flex flex-col justify-center items-center h-full mx-auto md:w-2/3 text-center'>
-                        <h2 className="text-4xl font-bold text-white mb-12">
+                        <h2 className="text-4xl font-semibold text-white mb-12">
                             Discover our Currency Solutions
                         </h2>
                         <p className="text-white text-xl px-6">

@@ -21,7 +21,7 @@ const Features = () => {
     return (
         <section id='features' className='my-32'>
             <div className='mx-auto px-10 md:px-0 md:w-1/2 text-center'>
-                <h2 className="text-2xl font-bold text-slate-800 mb-8">
+                <h2 className="text-3xl font-semibold text-slate-800 mb-8">
                     Explore Our Features
                 </h2>
                 <p className="text-slate-600 mb-14">ForeXplore offers a comprehensive range of features designed to empower your currency exchange experience. Whether you're a beginner or an experienced trader, our platform provides you with the tools and resources you need to succeed in the global financial markets.</p>
