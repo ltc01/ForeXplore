@@ -1,52 +1,27 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import {ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon,
-} from "@heroicons/react/24/outline";
+import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
 import { ChevronDownIcon} from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
-const features = [
-    {
-        name: "Live Rates",
-        description: "Get Live Exchange Rates",
-        href: "#",
-        icon: ChartPieIcon,
-    },
-    {
-        name: "Historical Rates",
-        description: "Get and Analyze past trends",
-        href: "#",
-        icon: CursorArrowRaysIcon,
-    },
-    {
-        name: "Currency converter",
-        description: "Easily convert currencies with our intuitive currency converter tool",
-        href: "#",
-        icon: FingerPrintIcon,
-    },
-    {
-        name: "Timeframe Query",
-        description: "Explore currency rates for custom timeframes",
-        href: "#",
-        icon: SquaresPlusIcon,
-    },
-    {
-        name: "Change Query",
-        description: "Analyze changes in currency rates over time",
-        href: "#",
-        icon: ArrowPathIcon,
-    },
+const description = [
+    "Get Live Exchange Rates",
+    "Get and Analyze past trends",
+    "Easily convert currencies with our intuitive currency converter tool",
+    "Explore currency rates for custom timeframes",
+    "Analyze changes in currency rates over time",
+
 ];
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-const NavBar = () => {
+const NavBar = ({features}) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-yellow-200 z-10 fixed w-full">
+        <header className="bg-yellow-200 z-10 fixed w-full shadow-md">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
             >
                 {/* Company Logo */}
@@ -67,14 +42,14 @@ const NavBar = () => {
                 </div>
 
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#home" className="text-sm font-semibold leading-6 text-slate-800 ">
+                    <a href="#home" className="text-sm font-semibold leading-6 hover:underline text-slate-800 ">
                         Home
                     </a>
-                    <a href="#about" className="text-sm font-semibold leading-6 text-slate-800 ">
+                    <a href="#about" className="text-sm font-semibold leading-6 hover:underline  text-slate-800 ">
                         About
                     </a>
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-800 font-semibold leading-6">
+                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-800 hover:underline  font-semibold leading-6">
                             Features
                             <ChevronDownIcon
                                 className="h-5 w-5 flex-none"
@@ -92,10 +67,10 @@ const NavBar = () => {
                         >
                             <Popover.Panel className="absolute -right-56 z-10 mt-3 w-96 max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-3">
-                                    {features.map((item) => (
+                                    {features.map((item,index) => (
                                         <div
                                             key={item.name}
-                                            className="group relative flex items-center gap-x-5 rounded-lg p-2 text-sm leading-6 hover:bg-yellow-50"
+                                            className="group relative flex items-center gap-x-5 rounded-lg p-2 text-sm leading-6 hover:bg-black/10"
                                         >
                                             <div className="flex h-10 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-yellow-200">
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-black" />
@@ -104,7 +79,7 @@ const NavBar = () => {
                                                 <Link to={item.href} className="block font-semibold text-gray-900">
                                                     {item.name}
                                                 </Link>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
+                                                <p className="mt-1 text-gray-600">{description[index]}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -113,10 +88,10 @@ const NavBar = () => {
                         </Transition>
                     </Popover>
 
-                    <a href="#products" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
+                    <a href="#products" className="text-sm text-slate-800 hover:underline  font-semibold leading-6 text-gray-900">
                         Products
                     </a>
-                    <a href="#contactus" className="text-sm text-slate-800 font-semibold leading-6 text-gray-900">
+                    <a href="#contactus" className="text-sm text-slate-800 hover:underline  font-semibold leading-6 text-gray-900">
                         Contact Us
                     </a>
                 </Popover.Group>
@@ -127,7 +102,6 @@ const NavBar = () => {
                 open={mobileMenuOpen}
                 onClose={setMobileMenuOpen}
             >
-                {/* <div className="fixed inset-0 z-10" /> */}
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <h1 className="-m-1.5 p-1.5 text-2xl text-semibold">Menu</h1>
@@ -151,7 +125,7 @@ const NavBar = () => {
                                 <Disclosure as="div" className="-mx-3">
                                     {({ open }) => (
                                         <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-yellow-100">
+                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                                 Features
                                                 <ChevronDownIcon className={classNames(open ? "rotate-180" : "", "h-5 w-5 flex-none")} />
                                             </Disclosure.Button>
@@ -162,7 +136,7 @@ const NavBar = () => {
                                                         key={item.name}
                                                         as="a"
                                                         href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-yellow-100"
+                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                     >
                                                         {item.name}
                                                     </Disclosure.Button>
