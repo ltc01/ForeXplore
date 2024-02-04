@@ -7,8 +7,8 @@ const Home = () => {
         <main>
             <section id="home">
                 <div className='w-full lg:px-20 gap-10 pt-40 flex flex-col items-center lg:flex-row'>
-                    <div className='flex px-10 flex-col justify-center items-center lg:items-start lg:w-[60%]'>
-                        <h1 className='text-4xl text-slate-800 font-bold mb-5' >Welcome to ForeXplore</h1>
+                    <div className='flex px-10 flex-col justify-center lg:w-[60%]'>
+                        <h1 className='text-4xl text-center lg:text-left text-slate-800 font-bold mb-5' >Welcome to ForeXplore</h1>
                         <p className='text-slate-600 text-center lg:text-left lg:mr-10 pb-10'>
                         ForeXplore is your ultimate destination for all things related to currency exchange. Whether you're a seasoned trader, a business owner managing international transactions, or someone simply curious about currency markets, ForeXplore has everything you need to navigate the world of forex with confidence.
                         </p>
