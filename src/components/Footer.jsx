@@ -33,6 +33,8 @@ const Footer = () => {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center ">Terms of Service | Privacy Policy | © 2024 ForeXplore. All rights reserved.
                     </span>
+                    <span className="text-sm text-gray-500 sm:text-center ">Developed by Laxmi Chaudhary
+                    </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="#" className="text-gray-500 hover:text-yellow-300 ">
                             <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
