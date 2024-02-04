@@ -46,12 +46,12 @@ const NavBar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-yellow-200">
+        <header className="bg-yellow-200 z-10 fixed w-full">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
             >
                 {/* Company Logo */}
                 <div className="flex lg:flex-1">
-                    <h1 className="-m-1.5 p-1.5 text-2xl font-bold">
+                    <h1 className="-m-1.5 p-1.5 text-2xl text-slate-700 font-bold">
                         ForeXplore.
                     </h1>
                 </div>
@@ -67,17 +67,17 @@ const NavBar = () => {
                 </div>
 
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm font-semibold leading-6 text-slate-700 ">
                         Home
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm font-semibold leading-6 text-slate-700 ">
                         About
                     </a>
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-700 font-semibold leading-6">
                             Features
                             <ChevronDownIcon
-                                className="h-5 w-5 flex-none text-gray-400"
+                                className="h-5 w-5 flex-none"
                             />
                         </Popover.Button>
 
@@ -113,10 +113,10 @@ const NavBar = () => {
                         </Transition>
                     </Popover>
 
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm text-slate-700 font-semibold leading-6 text-gray-900">
                         Products
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm text-slate-700 font-semibold leading-6 text-gray-900">
                         Contact Us
                     </a>
                 </Popover.Group>

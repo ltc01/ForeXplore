@@ -4,8 +4,8 @@ ForeXplore is a web application that provides users with access to live currency
 
 ## Features
 
-- Live Exchange Rates: Stay updated with real-time exchange rates for various currency pairs.
-- Historical Exchange Rates: Analyze past trends and patterns with historical exchange rate data.
+- Live Exchange Rates: Stay updated with real-time exchange rates.
+- Historical Exchange Rates: Analyze past trends historical exchange rate data.
 - Currency Converter: Easily convert currencies with an intuitive currency converter tool.
 - Timeframe Query: Explore currency rates for custom timeframes using the timeframe query feature.
 - Change Query: Analyze changes in currency rates over time with the change query tool.
