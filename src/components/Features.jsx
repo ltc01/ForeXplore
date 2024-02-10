@@ -29,7 +29,7 @@ const Features = ({features}) => {
               key={index}
               className="bg-black/90 w-80 text-center rounded-3xl py-10 px-7 shadow-lg shadow-black/60 hover:bg-slate-800 cursor-pointer"
             ><item.icon className="h-9 w-10 inline text-yellow-300 mr-3 " />
-              <Link className="text-yellow-300 hover:underline font-semibold text-xl"
+              <Link className="text-yellow-300 underline font-semibold text-xl"
               to={item.href}
               >
                 {item.name}

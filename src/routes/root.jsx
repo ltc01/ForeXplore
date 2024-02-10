@@ -6,14 +6,14 @@ import Features from '../components/Features';
 import Products from '../components/Products';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import {ArrowPathIcon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon} from "@heroicons/react/24/outline";
+import { ArrowPathIcon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 
 
 const Root = () => {
     const features = [
         {
             name: "Live Rates",
-            href: "/liveRate",
+            href: "/liveRates",
             icon: ChartPieIcon,
         },
         {

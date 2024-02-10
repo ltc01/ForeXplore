@@ -12,7 +12,7 @@ const App = () => {
           errorElement: <ErrorPage />,
         },
         {
-          path: '/LiveRates',
+          path: '/liveRates',
           element: <LiveRates />
         }
       ]);
