@@ -1,29 +1,45 @@
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
-import { ChevronDownIcon} from "@heroicons/react/20/solid";
+import { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { ArrowPathIcon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 
-const description = [
-    "Get Live Exchange Rates",
-    "Get and Analyze past trends",
-    "Easily convert currencies with our intuitive currency converter tool",
-    "Explore currency rates for custom timeframes",
-    "Analyze changes in currency rates over time",
 
-];
+export const features = [
+    {
+      name: "Live Rates",
+      href: "/liveRates",
+      icon: ChartPieIcon,
+    },
+    {
+      name: "Historical Rates",
+      href: "/historicalRate",
+      icon: CursorArrowRaysIcon,
+    },
+    {
+      name: "Currency converter",
+      href: "/currencyConverter",
+      icon: FingerPrintIcon,
+    },
+    {
+      name: "Timeframe Query",
+      href: "/timeFrameChanges",
+      icon: SquaresPlusIcon,
+    },
+    {
+      name: "Change Query",
+      href: "/changeRates",
+      icon: ArrowPathIcon,
+    },
+  ];
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
-const NavBar = ({features}) => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const NavBar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <header className="bg-yellow-200 z-10 fixed w-full shadow-md">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-            >
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 {/* Company Logo */}
                 <div className="flex lg:flex-1">
                     <h1 className="-m-1.5 p-1.5 text-2xl text-slate-800 font-bold">
@@ -31,134 +47,124 @@ const NavBar = ({features}) => {
                     </h1>
                 </div>
 
+                {/* Mobile Menu Toggle */}
                 <div className="flex lg:hidden">
                     <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(true)}
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
 
-                <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#home" className="text-sm font-semibold leading-6 hover:underline text-slate-800 ">
-                        Home
-                    </a>
-                    <a href="#about" className="text-sm font-semibold leading-6 hover:underline  text-slate-800 ">
-                        About
-                    </a>
-                    <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm text-slate-800 hover:underline  font-semibold leading-6">
+                {/* Desktop Menu */}
+                <ul className="hidden lg:flex lg:gap-x-12">
+                    <li>
+                        <Link to="/" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                            About
+                        </Link>
+                    </li>
+                    <li className="relative">
+                        <Link to='/features' className="inline text-sm text-slate-800 hover:underline font-semibold leading-6">
                             Features
-                            <ChevronDownIcon
-                                className="h-5 w-5 flex-none"
-                            />
-                        </Popover.Button>
+                        </Link>
+                        <ChevronDownIcon className="h-5 w-5 ml-2 inline" onClick={() => setOpen(!open)} />
+                        {open && <button className="absolute top-full left-0 z-10 mt-3 w-56 max-w-md overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-gray-900/5">
+                            <div >
+                                {features.map((item) => (
+                                    <Link
+                                        key={item.name}
+                                        to={`/features${item.href}`}
+                                        className="block py-2 text-sm font-semibold text-gray-900 hover:bg-yellow-100"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </button>}
+                    </li>
+                    <li>
+                        <Link to="/products" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                            Products
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                            Contact Us
+                        </Link>
+                    </li>
+                </ul>
 
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0 translate-y-1"
-                            enterTo="opacity-100 translate-y-0"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 translate-y-1"
-                        >
-                            <Popover.Panel className="absolute -right-56 z-10 mt-3 w-96 max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                                <div className="p-3">
-                                    {features.map((item,index) => (
-                                        <div
-                                            key={item.name}
-                                            className="group relative flex items-center gap-x-5 rounded-lg p-2 text-sm leading-6 hover:bg-black/10"
-                                        >
-                                            <div className="flex h-10 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-yellow-200">
-                                                <item.icon className="h-6 w-6 text-gray-600 group-hover:text-black" />
-                                            </div>
-                                            <div className="flex-auto">
-                                                <Link to={item.href} className="block font-semibold text-gray-900">
+                {/* Mobile Menu */}
+                {isMobileMenuOpen && (
+                    <div className="lg:hidden absolute">
+                        <div className="fixed inset-y-0 left-40 right-0 z-50 bg-white">
+                            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+                                <h1 className="-m-1.5 p-1.5 text-2xl font-semibold">Menu</h1>
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="text-gray-700"
+                                >
+                                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                </button>
+                            </div>
+                            <ul className="px-8 py-5 flex flex-col gap-8">
+                                <li>
+                                    <Link to="/" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                                        Home
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/about" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                                        About
+                                    </Link>
+                                </li>
+                                <li className="relative">
+                                    <Link to='/features' className="inline text-sm text-slate-800 hover:underline font-semibold leading-6">
+                                        Features
+                                    </Link>
+                                    <ChevronDownIcon className="h-5 w-5 ml-2 inline" onClick={() => setOpen(!open)} />
+                                    {open && <button className="absolute top-full left-0 z-10 mt-3 w-56 max-w-md overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-gray-900/5">
+                                        <div>
+                                            {features.map((item) => (
+                                                <Link
+                                                    key={item.name}
+                                                    to={`/features${item.href}`}
+                                                    className="block px-4 py-3 text-left text-sm font-semibold text-gray-900 hover:bg-yellow-100"
+                                                >
                                                     {item.name}
                                                 </Link>
-                                                <p className="mt-1 text-gray-600">{description[index]}</p>
-                                            </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </Popover.Panel>
-                        </Transition>
-                    </Popover>
+                                    </button>}
+                                </li>
+                                <li>
+                                    <Link to="/products" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                                        Products
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                                        Contact Us
+                                    </Link>
+                                </li>
+                            </ul>
 
-                    <a href="#products" className="text-sm text-slate-800 hover:underline  font-semibold leading-6 text-gray-900">
-                        Products
-                    </a>
-                    <a href="#contactus" className="text-sm text-slate-800 hover:underline  font-semibold leading-6 text-gray-900">
-                        Contact Us
-                    </a>
-                </Popover.Group>
-            </nav>
-            <Dialog
-                as="div"
-                className="lg:hidden"
-                open={mobileMenuOpen}
-                onClose={setMobileMenuOpen}
-            >
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div className="flex items-center justify-between">
-                        <h1 className="-m-1.5 p-1.5 text-2xl text-semibold">Menu</h1>
-                        <button
-                            type="button"
-                            className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                            onClick={() => setMobileMenuOpen(false)}
-                        >
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div className="mt-6 flow-root">
-                        <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                <Link to="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    Home
-                                </Link>
-                                <Link to="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    About
-                                </Link>
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Features
-                                                <ChevronDownIcon className={classNames(open ? "rotate-180" : "", "h-5 w-5 flex-none")} />
-                                            </Disclosure.Button>
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...features].map((item) => (
-                                                    <Disclosure.Button
-                                                        key={item.name}
-                                                        as="a"
-                                                        href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                    >
-                                                        {item.name}
-                                                    </Disclosure.Button>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-
-
-                                <Link to="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    Products
-                                </Link>
-                                <Link to="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    Contact Us
-                                </Link>
-                            </div>
                         </div>
+                        <div className="fixed inset-0 z-40 bg-black opacity-50" onClick={() => setIsMobileMenuOpen(false)}></div>
                     </div>
-                </Dialog.Panel>
-            </Dialog>
+                )}
+            </nav>
+
+
         </header>
+
     );
 };
 

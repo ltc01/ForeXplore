@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { features } from "./NavBar";
 
-const Features = ({features}) => {
+const Features = () => {
   const details = [
         "Stay up-to-date with real-time exchange rates for various currency pairs from around the world. Our live rates feature provides you with accurate and reliable data, ensuring you always have the latest information at your fingertips.",
         "Analyze past trends and patterns with our historical exchange rate data. Access historical data for specific time periods, currencies, and exchange rates to gain valuable insights into market performance and make informed trading decisions.",
@@ -10,9 +11,9 @@ const Features = ({features}) => {
         "Analyze changes in currency rates over time with our change query tool. Compare exchange rates between two dates to identify trends, patterns, and fluctuations in currency markets, empowering you to make informed trading decisions.",        
   ];
   return (
-    <section id="features" className="my-32">
-      <div className="mx-auto px-10 md:px-0 md:w-1/2 text-center">
-        <h2 className="text-3xl font-semibold text-slate-800 mb-8">
+    <section id="features">
+      <div className="mx-auto pt-32 px-10 md:px-0 md:w-1/2 text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-8">
           Explore Our Features
         </h2>
         <p className="text-slate-600 mb-14">
@@ -22,8 +23,8 @@ const Features = ({features}) => {
           resources you need to succeed in the global financial markets.
         </p>
       </div>
-      <div className="px-10">
-        <ul className="flex flex-col justify-center flex-wrap gap-x-5 gap-y-16 lg:flex-row">
+      <div className="px-10 pb-32">
+        <ul className="flex justify-center flex-wrap gap-x-5 gap-y-16">
           {features.map((item, index) => (
             <li
               key={index}
