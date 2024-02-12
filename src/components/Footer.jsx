@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="bg-black/90" >
+        <footer className="bg-black/90 fixed bottom-0 right-0 left-0" >
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="flex justify-between flex-col lg:flex-row">
                     <div className="mb-6">
@@ -19,7 +19,7 @@ const Footer = () => {
                                 <li className='hover:text-yellow-100 '>Contact us</li>
                             </ul>
                         </div>
-                        <div className=''>
+                        <div>
                             <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">Contacts</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li>Email: info@forexplore.com</li>

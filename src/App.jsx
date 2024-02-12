@@ -8,6 +8,7 @@ import Features from './components/Features.jsx';
 import Footer from './components/Footer.jsx';
 import Products from './components/Products.jsx';
 import Contact from './components/Contact.jsx';
+import LiveRates from './components/Features/liveRates.jsx';
 
 
 
@@ -20,7 +21,7 @@ const App = () => {
         <Route path='/' element={<Home Children={<><About/><Features/><Products /><Contact/></>} />} />
         <Route path='/about' element={<About />} />
         <Route path='/features' element={<Features />} />
-        <Route path='/features/:id' element={<Features />} />
+        <Route path='/features/:id' element={<LiveRates />}  />
         <Route path='/products' element={<Products />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
