@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
     return (
             <section id='contactus'>
-                <div className="py-8 lg:py-32 px-4 mx-auto max-w-screen-md">
+                <div className="py-32 px-4 mx-auto max-w-screen-md">
                     <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-slate-800 ">Contact Us</h2>
                     <p className="mb-8 text-center text-gray-500 sm:text-xl"> Have questions or feedback? We'd love to hear from you! Feel free to reach out to our team using the contact form below, and we'll get back to you as soon as possible.</p>
                     <form action="#" className="space-y-8">
