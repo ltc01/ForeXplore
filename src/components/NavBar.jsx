@@ -114,7 +114,7 @@ const NavBar = () => {
                                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                                 </button>
                             </div>
-                            <ul className="px-8 py-5 flex flex-col gap-8">
+                            <ul className="px-8 py-5 flex flex-col gap-8" onClick={() => setIsMobileMenuOpen(false)}>
                                 <li>
                                     <Link to="/" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
                                         Home

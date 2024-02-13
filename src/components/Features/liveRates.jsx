@@ -32,11 +32,11 @@ const LiveRates = () => {
         <div>
           <h2 className='font-semibold text-xl'>Base: 1 {base}</h2>
           <h2 className='font-semibold text-xl'>
-            { rates.map((key, index)=>(
+            {/* { rates.map((key, index)=>(
               <li key={index}>
               Currency: {rates.currency}, Rate: {rates.rate}
             </li>
-            ))}
+            ))} */}
              </h2>
         </div>
 
