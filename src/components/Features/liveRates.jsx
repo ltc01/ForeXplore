@@ -1,43 +1,49 @@
 import React, { useEffect, useState } from 'react'
+import ReactCountryFlag from 'react-country-flag';
+import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const LiveRates = () => {
-  const [base, setBase] = useState('USD')
-  const [rates, setRates] = useState(null);
+  const [base, setBase] = useState('USD');
+  const [loading, setLoading] = useState(true);
+  const [rates, setRates] = useState({});
   const apikey = '8d5dfba1a50e6dd008f4fbd7';
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch(`https://v6.exchangerate-api.com/v6/${apikey}/latest/USD`);
-  //       const resData = await res.json();
-  //       const rates = await resData.conversion_rates
-  //       const ratesArray = Object.entries(rates).map(([key, value]) => ({
-  //        currency: key,
-  //         rate: value,
-  //       }))
-  //       setRates(ratesArray);
-  //       console.log(rates)
-  //     } catch (error) {
-  //       console.error('ERROR fetching data: ',error);
-  //     }
-  //   };
-  //   fetchData();
 
-  // }, [])
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`https://v6.exchangerate-api.com/v6/${apikey}/latest/USD`);
+        if(!res.ok){
+          throw new Error('Failed to fetch exchange rates');
+        }
+        const resData = await res.json();
+        setRates(resData.conversion_rates);
+        setLoading(false);
+      } catch (error) {
+        console.error('ERROR fetching data: ', error);
+        setLoading(false);
+      }
+    };
+    fetchData();
 
+  }, [])
+
+  console.log(rates);
   return (
     <>
-      <div className='pt-32 px-40 w-full bg-yellow-100'>
-        <h1 className='font-semibold text-2xl'>LiveRates </h1>
-        <div>
-          <h2 className='font-semibold text-xl'>Base: 1 {base}</h2>
-          <h2 className='font-semibold text-xl'>
-            {/* { rates.map((key, index)=>(
-              <li key={index}>
-              Currency: {rates.currency}, Rate: {rates.rate}
-            </li>
-            ))} */}
-             </h2>
+      <div className='p-40 w-full'>
+        <Link to='/features' >
+          <ArrowLeftCircleIcon className='h-10 relative -top-10 -left-10 text-slate-900' />
+        </Link>
+        <h1 className='font-semibold text-3xl text-center'>Live Exchange Rates </h1>
+        <div className='flex flex-wrap bg-slate-800 my-10 py-10 justify-center rounded-xl text-white'>
+          {loading ? <h1 className='text-yellow-200 text-2xl font-bold'>Loading...</h1> : (
+            Object.entries(rates).map(([currency, rate]) => (
+              <div key={currency}
+                className='w-56 py-2 pl-5'>
+                <span className='font-semibold text-yellow-200'><ReactCountryFlag countryCode={currency.slice(0, 2)} svg style={{ marginRight: '8px' }} />{currency}: </span><span className='p-2 text-slate-100'>{rate}</span>
+              </div>
+            )))}
         </div>
 
       </div>

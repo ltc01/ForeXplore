@@ -24,21 +24,19 @@ const Features = () => {
         </p>
       </div>
       <div className="px-10 pb-32">
-        <ul className="flex justify-center flex-wrap gap-x-5 gap-y-16">
+        <ul className="flex justify-center flex-wrap gap-10">
           {features.map((item, index) => (
-            <li
+            <Link to={`/features${item.href}`}
               key={index}
-              className="bg-black/90 w-80 text-center rounded-3xl py-10 px-7 shadow-lg shadow-black/60 hover:bg-slate-800 cursor-pointer"
-            ><item.icon className="h-9 w-10 inline text-yellow-300 mr-3 " />
-              <Link className="text-yellow-300 underline font-semibold text-xl"
-              to={`/features${item.href}`}
-              >
+              className="text-center w-72 rounded-3xl py-7 px-5 shadow-lg shadow-black/30 bg-slate-900 cursor-pointer"
+            ><item.icon className="h-8 inline text-yellow-300 mr-3 " />
+              <h2 className="inline text-yellow-300 hover:underline font-semibold text-xl">
                 {item.name}
-              </Link>
-              <p className="text-slate-300 text-[0.95em] mt-4 px-2">
+              </h2>
+              <p className="text-slate-100 text-[0.95em] mt-2 w-56 mx-auto text-center">
                 {details[index]}
               </p>
-            </li>
+            </Link>
           ))}
         </ul>
       </div>
