@@ -41,7 +41,8 @@ const LiveRates = () => {
             Object.entries(rates).map(([currency, rate]) => (
               <div key={currency}
                 className='w-56 py-2 pl-5'>
-                <span className='font-semibold text-yellow-200'><ReactCountryFlag countryCode={currency.slice(0, 2)} svg style={{ marginRight: '8px' }} />{currency}: </span><span className='p-2 text-slate-100'>{rate}</span>
+                <span className='font-semibold text-yellow-200'>
+                  <ReactCountryFlag countryCode={currency.slice(0, 2)} svg style={{ marginRight: '8px' }} />{currency}: </span><span className='p-2 text-slate-100'>{rate}</span>
               </div>
             )))}
         </div>
