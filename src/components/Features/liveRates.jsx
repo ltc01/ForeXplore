@@ -31,16 +31,16 @@ const LiveRates = () => {
   console.log(rates);
   return (
     <>
-      <div className='p-40 w-full'>
+      <div className='lg:py-24 lg:px-40 py-28 px-10 w-full'>
         <Link to='/features' >
-          <ArrowLeftCircleIcon className='h-10 relative -top-10 -left-10 text-slate-900' />
+          <ArrowLeftCircleIcon className='md:h-10 h-8 relative text-slate-900' />
         </Link>
         <h1 className='font-semibold text-3xl text-center'>Live Exchange Rates </h1>
-        <div className='flex flex-wrap bg-slate-800 my-10 py-10 justify-center rounded-xl text-white'>
+        <div className='flex flex-wrap bg-slate-800 my-10 py-5 lg:py-10 justify-center rounded-xl text-white'>
           {loading ? <h1 className='text-yellow-200 text-2xl font-bold'>Loading...</h1> : (
             Object.entries(rates).map(([currency, rate]) => (
               <div key={currency}
-                className='w-56 py-2 pl-5'>
+                className='md:w-56 w-48 py-2 pl-5'>
                 <span className='font-semibold text-yellow-200'>
                   <ReactCountryFlag countryCode={currency.slice(0, 2)} svg style={{ marginRight: '8px' }} />{currency}: </span><span className='p-2 text-slate-100'>{rate}</span>
               </div>
