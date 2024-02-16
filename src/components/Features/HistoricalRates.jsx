@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ReactCountryFlag from 'react-country-flag';
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
