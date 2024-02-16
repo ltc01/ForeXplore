@@ -33,7 +33,7 @@ const LiveRates = () => {
     <>
       <div className='lg:py-24 lg:px-40 py-28 px-10 w-full'>
         <Link to='/features' >
-          <ArrowLeftCircleIcon className='md:h-10 h-8 relative text-slate-900' />
+          <ArrowLeftCircleIcon className='md:h-10 h-8 relative hover:text-yellow-600' />
         </Link>
         <h1 className='font-semibold text-3xl text-center'>Live Exchange Rates </h1>
         <div className={`flex flex-wrap bg-slate-800 ${loading && 'animate-pulse bg-yellow-400'} my-10 py-5 lg:py-10 justify-center rounded-xl text-white`}>

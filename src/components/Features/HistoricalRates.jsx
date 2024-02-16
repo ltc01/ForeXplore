@@ -44,7 +44,7 @@ const HistoricalRates = () => {
     <>
       <div className='lg:py-24 lg:px-40 py-28 px-10 w-full'>
         <Link to='/features' >
-          <ArrowLeftCircleIcon className='md:h-10 h-8 inline relative text-slate-900' />
+          <ArrowLeftCircleIcon className='md:h-10 h-8 inline relative hover:text-yellow-600' />
         </Link>
         <h1 className='font-semibold text-3xl text-slate-800 text-center'>Get Historical Exchange Rate </h1>
         <form action='' onSubmit={(e) => fetchData(e)}>
