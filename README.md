@@ -1,6 +1,6 @@
 # ForeXplore
 
-ForeXplore is a web application that provides users with access to live currency exchange rates, historical data, currency conversion tools, educational resources, and more. This README provides an overview of the application structure and how to get started with development.
+ForeXplore is a web application that provides users with access to live currency exchange rates, historical data, currency conversion tools, educational resources, and more.
 
 ## Features
 
