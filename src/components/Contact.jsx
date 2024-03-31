@@ -2,11 +2,8 @@ import React from 'react'
 import Swal from 'sweetalert2';
 
 const Contact = () => {
-    const [result, setResult] = React.useState("");
-
     const onSubmit = async (event) => {
         event.preventDefault();
-        setResult("Sending....");
         const formData = new FormData(event.target);
 
         formData.append("access_key", "9be036d9-4a3f-4aa7-b967-c55e07df770a");
@@ -19,12 +16,11 @@ const Contact = () => {
         const data = await response.json();
 
         if (data.success) {
-            setResult("Form Submitted Successfully");
             event.target.reset();
             let timerInterval;
             Swal.fire({
                 title: "Thank You!",
-                html: "Form Submitted Successfully.",
+                html: "We'll connect you soon.",
                 timer: 5000,
                 timerProgressBar: true,
                 icon: "success",
@@ -35,7 +31,18 @@ const Contact = () => {
 
         } else {
             console.log("Error", data);
-            setResult(data.message);
+            let timerInterval;
+            Swal.fire({
+                title: "Error!",
+                html: "Failed, Please try again.",
+                timer: 5000,
+                timerProgressBar: true,
+                icon: "error",
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            })
+            
         }
     };
 
