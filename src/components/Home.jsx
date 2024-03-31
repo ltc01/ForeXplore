@@ -8,7 +8,7 @@ const Home = ({Children}) => {
         <>
         <main>
             <section id="home">
-                <div className='w-full lg:px-20 gap-10 pt-40 flex flex-col items-center lg:flex-row'>
+                <div className='w-full lg:px-20 gap-10 py-40 flex flex-col items-center lg:flex-row'>
                     <div className='flex px-10 flex-col justify-center lg:w-[60%]'>
                         <h1 className='text-4xl text-center lg:text-left text-slate-800 font-bold mb-5' >Welcome to ForeXplore</h1>
                         <p className='text-slate-600 text-center lg:text-left lg:mr-10 pb-10'>
@@ -20,11 +20,11 @@ const Home = ({Children}) => {
                         <img src={img} alt="hero-img" />
                     </div>
                 </div>
-                <Link to='#about' className="lg:block hidden animate-bounce bg-yellow-300 rounded-full p-3 cursor-pointer w-fit mx-auto mt-8">
+                {/* <Link to='#about' className="lg:block hidden animate-bounce bg-yellow-300 rounded-full p-3 cursor-pointer w-fit mx-auto mt-8">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
                     </svg>
-                </Link>
+                </Link> */}
             </section>
         </main>
         {Children}

@@ -61,17 +61,17 @@ const NavBar = () => {
                 {/* Desktop Menu */}
                 <ul className="hidden lg:flex lg:gap-x-12">
                     <li>
-                        <Link to="/" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                        <Link to="/" className="text-md font-semibold leading-6 hover:underline text-slate-800">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link to="/about" className="text-sm font-semibold leading-6 hover:underline text-slate-800">
+                        <Link to="/about" className="text-md font-semibold leading-6 hover:underline text-slate-800">
                             About
                         </Link>
                     </li>
                     <li className="relative">
-                        <Link to='/features' className="inline text-sm text-slate-800 hover:underline font-semibold leading-6">
+                        <Link to='/features' className="inline text-md text-slate-800 hover:underline font-semibold leading-6">
                             Features
                         </Link>
                         <ChevronDownIcon className="h-5 w-5 ml-2 inline" onClick={() => setOpen(!open)} />
@@ -90,12 +90,12 @@ const NavBar = () => {
                         </button>}
                     </li>
                     <li>
-                        <Link to="/products" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                        <Link to="/products" className="text-md text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
                             Products
                         </Link>
                     </li>
                     <li>
-                        <Link to="/contact" className="text-sm text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
+                        <Link to="/contact" className="text-md text-slate-800 hover:underline font-semibold leading-6 text-gray-900">
                             Contact Us
                         </Link>
                     </li>
